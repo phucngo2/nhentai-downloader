@@ -1,6 +1,6 @@
 {
-    "name": "nhen",
-    "productName": "nhen",
+    "name": "nhentai_downloader",
+    "productName": "nhentai_downloader",
     "version": "1.0.0",
     "description": "Application for downloading nhentai documents",
     "main": "src/index.js",
