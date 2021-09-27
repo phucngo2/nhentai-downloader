@@ -48,7 +48,10 @@ const createWindow = () => {
         api.getBook(code)
             .then(async (book) => {
                 // Remove special characters
-                var dir = book.title.english.replace(/\|/g, "");
+                var dir = book.title.english.replace(
+                    /[^a-zA-Z0-9\(\)\[\] ]/g,
+                    ""
+                );
 
                 // Concat dir
                 const savePath = `${chosenDir}/${dir}`;
@@ -77,7 +80,7 @@ const createWindow = () => {
                 fs.mkdirSync(dir);
             }
         } catch (err) {
-            console.log(err);
+            mainWindow.webContents.send("error", "error");
         }
     }
 
